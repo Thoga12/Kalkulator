@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card">
+      <form action="" class="display">
+        <input class="textValue" id="textValue" placeholder="0" />
+      </form>
+      <div class="button">
+        <div class="tombolKiri">
+            <button class="button1" onclick="display('clear')">AC</button>
+            <button class="button1" onclick="display('delete')">DEL</button>
+            <button class="button1" onclick="dislapy('%')">%</button>
+            <script>
+                for(let a = 1; a <= 9; a++){
+                    document.write(`<button class="button1" onclick="display(${a})">
+                        `+ a +`</button>`)
+                }
+            </script>
+            <button class="button1"></button>
+            <button class="button1">0</button>
+            <button class="button1"></button>
+        </div>
+        <div class="tombolKanan">
+            <button class="button1" onclick="display('/')">/</button>
+            <button class="button1" onclick="display('*')">*</button>
+            <button class="button1" onclick="display('-')">-</button>
+            <button class="button1" onclick="display('+')">+</button>
+            <button class="button1" onclick="display('eval')">=</button>
+        </div>
+      </div>
+    </div>
+
+    <script >
+      let clikbutton = document.getElementById('textValue');
+      const display  = (a ) => {
+        if (a == 'clear') {
+          clikbutton.value = '';
+        } else if (a == 'delete') {
+          clikbutton.value = clikbutton.value.slice(0,-1);
+        } else if (a == "eval"){
+          clikbutton.value = eval(clikbutton.value);
+        }
+        else{
+          clikbutton.value += a;
+        }
+      
+      }
+    </script>
+  </body>
+</html>
